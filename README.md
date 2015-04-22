@@ -1,6 +1,6 @@
 ### Employees Data
 
-We move the data into a seperate file **services.js**, and creat a new module **directory.services** to fetch data.
+We move the data into a seperate file **services.js**, and create a new module **directory.services** to fetch data.
 
 Here we use a simple javascript object array to mock the data. In reality you will likely get them from database. 
 
