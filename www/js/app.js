@@ -12,16 +12,16 @@ angular.module('directory', ['ionic','directory.services','directory.controllers
   
   //when url is /employees, the EmployeeIndexCtrl will run, and the view will be templates/employee-index.html
   .state('employee-index', {
-    url: '/employees',
+    url: '/this is a url endpoint',
     templateUrl: 'templates/employee-index.html',
-    controller: 'EmployeeIndexCtrl'
+    controller: 'use a Angular contorller for this state'
   })
   
   ;
 
   // if none of the above states are matched, use this as the fallback
   // also the home page / goes to /employees, so it is the default page
-  $urlRouterProvider.otherwise('/employees');   
+  $urlRouterProvider.otherwise('/default-url');   
 }])
 
 .run(function($ionicPlatform) {
