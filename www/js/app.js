@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('directory', ['ionic'])
+angular.module('directory', ['ionic', 'directory.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,8 +19,10 @@ angular.module('directory', ['ionic'])
   });
 })
 
-.controller('EmployeeIndexCtrl',['$scope',function ($scope) {
+.controller('EmployeeIndexCtrl',['$scope', 'EmployeeService', function ($scope, EmployeeService) {
 
+  //use EmployeeService.findAll method to return employees
+  //use .then(successCallback, errorCallback, notifyCallback) to get employees
   $scope.employees = [
     {"id": 1, "firstName": "James", "lastName": "King", "title": "President and CEO", "pic": "James_King.jpg"},
     {"id": 2, "firstName": "Julie", "lastName": "Taylor", "title": "VP of Marketing", "pic": "Julie_Taylor.jpg"},

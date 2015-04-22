@@ -1,28 +1,30 @@
-Let's start building the employee directory app. This app is original created by <a href="http://coenraets.org/blog/2014/02/sample-mobile-application-with-ionic-and-angularjs/" target="_blank">
-Christophe Coenraets</a>. We encouge you to checkout his blog post and other wonderful apps he made.
-
-### Home Page
-
-In this chaper, we will build the home page of the app. The home page shows a list of current employees (names and titles). It also has a search bar on top of the page.
-
-### The Logic and controller
-
-In this exercise, we will build a list to show all employees.
-
-**app.js** is the entry point of our app. First we inject ```ionic``` library, and define controller **EmployeeIndexCtrl**.
-
 ### Employees Data
 
-First we need to have the employees data. Here we use a simple javascript object array to mock the data. In reality you will likely get them from database. 
+We move the data into a seperate file **services.js**, and creat a new module **directory.services** to fetch data.
 
-The ```$scope.employees``` variable contains all the data. For each employee entry, there are ```firstName```, ```lastName```, ```title``` and `pic` attributes.
+Here we use a simple javascript object array to mock the data. In reality you will likely get them from database. 
 
-### Ionic list directive
+The ```employees``` variable contains all the data. For each employee entry, there are ```firstName```, ```lastName```, ```title``` and `pic` attributes.
 
-The corresponding view is in the **index.html**. 
+### Promise
 
-`<ion-list>` is used to display a list of items. The list consist of multiple `<ion-item>`. We use `ng-repeat` to populate the list with the 
-`$scope.employees` defined in controller **EmployeeIndexCtrl**. Each item contains an employee's image, name and title.
+To fetch data, we use **$q**. It is a service that helps you run functions asynchronously, and use their return values (or exceptions) when they are done processing.
 
-If you know angular, you should feel right at home with these code. Essentially we are writing angular code in directives provided by ionic.
+It is not necessary here as the data is an in-memory array, which is instantly avaiable. In real world, fetching data take some time. 
+And promise provides an intuitive and clean interface for dealing with asynchronous code.
+
+### Controller
+
+In **EmployeeIndexCtrl** controller, we can use the `resolve` method to get employees array from promise. `EmployeeService.findAll` return 
+a promise, it has a resolve method,
+
+```
+resolve(value) – resolves the derived promise with the value
+
+promise.then(function(value) { resolvedValue = value; });
+
+```
+
+The value is the `employees` array. We need to assign it to the `$scope.employees` variable in controller.
+
 
