@@ -6,11 +6,10 @@ angular.module('directory.controllers', [])
   $scope.employees = [];
 
   //get all employees from EmployeeService
-  //assagin the results to employees variable
   var findAllEmployees = function() {
-
-
-
+    EmployeeService.findAll().then(function(employees){
+      $scope.employees = employees;
+    });
   };
 
   //initially, show all employees on view 

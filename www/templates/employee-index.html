@@ -5,10 +5,7 @@
     <ion-item ng-repeat="employee in employees" type="item-text-wrap" class="item-avatar">
       <img ng-src="pics/{{employee.pic}}"/>
       {{employee.firstName}} {{employee.lastName}}
-      
-      <!-- show employee's title in <p> tag below -->
-      <p> </p>
-      
+      <p>{{employee.title}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
