@@ -1,4 +1,4 @@
-In this exercise, we finish our implementation of inifinite scrolling. We now already have service support data pagination, let's 
+In this exercise, we finish our implementation of infinite scrolling. We now already have service support data pagination, let's 
 see how to use it in controller and view.
 
 ### Controller 
@@ -19,6 +19,6 @@ Another method ```$scope.hasMoreData``` is needed to notify ```<ion-infinite-scr
 ### View 
 
 Now we have everything ready, adding the directive to view is actually the easiest part. The ```<ion-infinite-scroll>``` expects a 
-```ng-if``` binding to a funcion to check if there is more data, and ```on-infinite``` binding to function to load more data. 
+```ng-if``` binding to a function to check if there is more data, and ```on-infinite``` binding to a function to load more data. 
 
 Just wire them with the right functions, the infinite scrolling will work.
