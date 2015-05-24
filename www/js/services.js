@@ -5,6 +5,25 @@ angular.module('movie.services', [])
   //store current selected movies
   var current = [];
   
+    //filter movies based on the low and high rating
+  var filterByRating = function(low, high, pageNum, limit){
+    //rating is between 0 and 10
+    low = low || 0;
+    high = high || 10;
+    var defer = $q.defer();
+    getAllMovies().then(function(movies){
+      //use array.filters to select ones from all movies
+      //filter condition is movie.rating > low && movie.rating < high
+      //set filter results to be current selected movies
+      //use loadPage to resolve movies in desired pageNum from results
+
+
+
+      
+    });       
+    return defer.promise;
+  };
+  
   var getAllMovies = function(){
     var defer = $q.defer();
     if (movies.length === 0){
@@ -81,25 +100,6 @@ angular.module('movie.services', [])
     });
     reset(results);
     defer.resolve(loadPage(pageNum, limit));
-    return defer.promise;
-  };
-  
-  //filter movies based on the low and high rating
-  var filterByRating = function(low, high, pageNum, limit){
-    //rating is between 0 and 10
-    low = low || 0;
-    high = high || 10;
-    var defer = $q.defer();
-    getAllMovies().then(function(movies){
-      //use array.filters to select ones from all movies
-      //filter condition is movie.rating > low && movie.rating < high
-      //set filter results to be current selected movies
-      //use loadPage to resolve movies in desired pageNum from results
-
-
-
-      
-    });       
     return defer.promise;
   };
   
