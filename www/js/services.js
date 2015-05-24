@@ -7,9 +7,6 @@ angular.module('movie.services', [])
   
     //filter movies based on the low and high rating
   var filterByRating = function(low, high, pageNum, limit){
-    //rating is between 0 and 10
-    low = low || 0;
-    high = high || 10;
     var defer = $q.defer();
     getAllMovies().then(function(movies){
       //use array.filters to select ones from all movies
