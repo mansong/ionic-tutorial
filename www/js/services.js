@@ -9,7 +9,7 @@ angular.module('movie.services', [])
   var filterByRating = function(low, high, pageNum, limit){
     var defer = $q.defer();
     getAllMovies().then(function(movies){
-      //use array.filters to select ones from all movies
+      //use array.filter to select ones from all movies
       //filter condition is movie.rating > low && movie.rating < high
       //set filter results to be current selected movies
       //use loadPage to resolve movies in desired pageNum from results
