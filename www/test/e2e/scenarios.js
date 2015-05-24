@@ -17,7 +17,7 @@ describe('Test Movie Detail.', function(){
       expect(title).toContain('19770525', 'There should be an h2 element contains movie\'release date -- 19770525.');
     });
     
-    it('Should show movie\'s plot, genres, rate, language, country, directors, actors in card view after image.', function(){
+    it('Star War movie detail', function(){
       var elements = element.all(by.css('.card .item'));
       element.all(by.css('.card .item')).then(function(allElems){
         expect(allElems.length).toBe(9);
