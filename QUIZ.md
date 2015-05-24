@@ -1,1 +1,0 @@
-Click submit to finish the course. Congratulations!
