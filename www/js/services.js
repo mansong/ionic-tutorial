@@ -5,6 +5,22 @@ angular.module('movie.services', [])
   //store current selected movies
   var current = [];
   
+  var findMovieByTitle = function(title){
+    var defer = $q.defer();
+    //filter all movies to find the first one with title attribute the same as passed in title
+    getAllMovies().then(function(movies){
+      //change the code below. Return the first movie found with the title
+      //or return null if there is no movie with the passed in title
+      
+      defer.resolve(null);
+      
+      
+    
+      
+    });       
+    return defer.promise;      
+  };
+  
   var getAllMovies = function(){
     var defer = $q.defer();
     if (movies.length === 0){
@@ -96,22 +112,6 @@ angular.module('movie.services', [])
       defer.resolve(loadPage(pageNum, limit));
     });       
     return defer.promise;
-  };
-
-  var findMovieByTitle = function(title){
-    var defer = $q.defer();
-    //filter all movies to find the first one with title attribute the same as passed in title
-    getAllMovies().then(function(movies){
-      //change the code below. Return the first movie found with the title
-      //or return null if there is no movie with the passed in title
-      
-      defer.resolve(null);
-      
-      
-    
-      
-    });       
-    return defer.promise;      
   };
 
   return {
